@@ -1,0 +1,117 @@
+h1, p, body {
+  /* 上下左右の余白を0pxにする */
+  margin: 0px;
+}
+
+p, a {
+  /* フォントサイズを20pxにする */
+  font-size: 20px;
+}
+
+header {
+  /* 下余白を20pxにする */
+  margin-bottom: 20px;
+  /* 背景色 */
+  background-color: rgb(244,79,79);
+  /*中央揃え*/
+  text-align: center;
+}
+
+h1 {
+  /* 文字色 */
+  color:rgb(255,255,255)
+}
+
+main {
+  /* 上下左右の余白を10pxにする */
+  margin: 10px;
+}
+
+#parent {
+  /* Flexコンテナ */
+  display:flex;
+  /* 一番左と一番右のアイテムも含め、均等な間隔で配置する */
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contents {
+  /* 太さ3px、実線、色(238,204,204)の線で囲む */
+  border:3px solid rgb(238,204,204);
+  /* 幅を親要素の25%にする */
+  flex-basis: 25%;
+  /* 要素内の余白を上下10px,左右15pxにする */
+  padding: 10 15;
+  /* 要素外の余白を上下20,左右0にする */
+  margin: 20 10;
+  /* 中央揃えにする */
+  padding-left: auto;
+  padding-right: auto;
+  text-align: center;
+}
+
+h2 {
+  /* フォントサイズ */
+  font-size: 25px;
+  /* 下線を引く */
+  border-bottom: 3px dotted rgb(236, 122, 122);
+}
+
+h2::before {
+  /* h2要素の前に●を付けて色を指定する */
+  content: "●";
+  color: rgb(239, 111, 139)
+}
+
+.contents p:nth-of-type(2)::first-letter {
+  /* 二番目のp要素内のテキストの中で一番目の文字のみ太字にして色を指定する */
+  font-weight: bold;
+  color: rgb(97, 206, 249)
+}
+
+.contents img {
+  /* 画像の余白と幅の設定 */
+  margin: 10, 0;
+  width: 70%;
+}
+
+footer {
+  /* フッターの設定 */
+  background-color: rgb(244, 79, 79);
+  text-align: center;
+}
+
+footer a {
+  /* 文字色の設定 */
+  color: rgb(255, 255, 255);
+}
+
+footer a:visited {
+  /* 訪問済みリンク */
+  color: rgb(193, 234, 251);
+}
+
+footer a:hover {
+  /* マウスカーソルが乗った時 */
+  color: rgb(245, 178, 168);
+}
+
+
+/* 画面幅が768px以下の場合の処理 */
+@media screen and (max-width: 768px) {
+  /* フォントサイズ変更 */
+  h2 {
+    font-size: 30px;    
+  }
+
+  /* フォントサイズ変更 */
+  p {
+    font-size: 25px;
+  }
+
+  /* 縦並びにする */
+  #parent {
+    display:flex;
+    flex-direction: column;
+  }
+}
